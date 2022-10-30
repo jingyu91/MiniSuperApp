@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		58908454290E5088005C5616 /* ModernRIBs in Frameworks */ = {isa = PBXBuildFile; productRef = 58908453290E5088005C5616 /* ModernRIBs */; };
+		589085E9290EAFD2005C5616 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 589085E8290EAFD2005C5616 /* SnapKit */; };
+		589085EC290EB009005C5616 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 589085EB290EB009005C5616 /* Then */; };
 		F57EBE542738468700FE9319 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE512738468700FE9319 /* UIImage+Utils.swift */; };
 		F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE522738468700FE9319 /* Array+Utils.swift */; };
 		F57EBE562738468700FE9319 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE532738468700FE9319 /* UITableView+Utils.swift */; };
@@ -93,6 +95,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				58908454290E5088005C5616 /* ModernRIBs in Frameworks */,
+				589085EC290EB009005C5616 /* Then in Frameworks */,
+				589085E9290EAFD2005C5616 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +253,8 @@
 			name = MiniSuperApp;
 			packageProductDependencies = (
 				58908453290E5088005C5616 /* ModernRIBs */,
+				589085E8290EAFD2005C5616 /* SnapKit */,
+				589085EB290EB009005C5616 /* Then */,
 			);
 			productName = SuperRedApp;
 			productReference = F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */;
@@ -279,6 +285,8 @@
 			mainGroup = F5829F4C26DB2BC400BFA8CD;
 			packageReferences = (
 				58908452290E5088005C5616 /* XCRemoteSwiftPackageReference "ModernRIBs" */,
+				589085E7290EAFD2005C5616 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				589085EA290EB009005C5616 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = F5829F5626DB2BC400BFA8CD /* Products */;
 			projectDirPath = "";
@@ -541,6 +549,22 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		589085E7290EAFD2005C5616 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		589085EA290EB009005C5616 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -548,6 +572,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 58908452290E5088005C5616 /* XCRemoteSwiftPackageReference "ModernRIBs" */;
 			productName = ModernRIBs;
+		};
+		589085E8290EAFD2005C5616 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 589085E7290EAFD2005C5616 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		589085EB290EB009005C5616 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 589085EA290EB009005C5616 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
