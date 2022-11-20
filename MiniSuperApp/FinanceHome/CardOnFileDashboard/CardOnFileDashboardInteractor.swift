@@ -19,7 +19,7 @@ protocol CardOnFileDashboardPresentable: Presentable {
 }
 
 protocol CardOnFileDashboardListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func cardOnFileDashboardDidTapAddPaymentMethod()
 }
 
 protocol CardOnFileDashboardInteractorDependency {
@@ -27,22 +27,22 @@ protocol CardOnFileDashboardInteractorDependency {
 }
 
 final class CardOnFileDashboardInteractor: PresentableInteractor<CardOnFileDashboardPresentable>, CardOnFileDashboardInteractable, CardOnFileDashboardPresentableListener {
-
+    
     weak var router: CardOnFileDashboardRouting?
     weak var listener: CardOnFileDashboardListener?
-
+    
     private let dependency: CardOnFileDashboardInteractorDependency
-
+    
     private var cancellables: Set<AnyCancellable>
-
+    
     init(presenter: CardOnFileDashboardPresentable,
-                  dependency: CardOnFileDashboardInteractorDependency) {
+         dependency: CardOnFileDashboardInteractorDependency) {
         self.dependency = dependency
         self.cancellables = .init()
         super.init(presenter: presenter)
         presenter.listener = self
     }
-
+    
     override func didBecomeActive() {
         super.didBecomeActive()
         
@@ -51,11 +51,15 @@ final class CardOnFileDashboardInteractor: PresentableInteractor<CardOnFileDashb
             self.presenter.update(with: viewModels)
         }.store(in: &cancellables)
     }
-
+    
     override func willResignActive() {
         super.willResignActive()
         
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
+    }
+    
+    func didTapAddPaymentMethod() {
+        listener?.cardOnFileDashboardDidTapAddPaymentMethod()
     }
 }
